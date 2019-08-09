@@ -62,6 +62,7 @@ def initialize_root_logger(filename, print_level=logging.INFO, file_level=loggin
 
 @cli.command()
 def compute_topologyzoo_treewidths():
+    """Computes the treewidth of all contained topology zoo graphs. Stores the output in the output/ folder and the log in log/."""
     util.ExperimentPathHandler.initialize(check_emptiness_log=False, check_emptiness_output=False)
     log_file = os.path.join(util.ExperimentPathHandler.LOG_DIR, "compute_topologyzoo_treewidths.log")
     logger = initialize_root_logger(log_file, allow_override=True)

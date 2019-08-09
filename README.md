@@ -15,11 +15,13 @@ The algorithm was presented in the [paper at ESA 2017](http://drops.dagstuhl.de/
  Furthermore, for recomputing the treewdiths, the environment variable **EXPERIMENT_HOME** should be set to a path,
 such that the subfolders output/ and log/ exist. If this variable is not set, the first folder having both subfolders is chosen to store the log and the output.
 
+**Important**: The topology zoo graphs ([from here](http://www.topology-zoo.org/dataset.html)) are stored inside [our package](topologyzoo_treewidth_analysis/data/topologyZoo). If you want to update the graphs, just overwrite the respective files and reinstall the package (see below). 
+
 **Note**: Our source was only tested on Linux (specifically Ubuntu 16.04).  
 
 # Installation
 
-To install **topologyzoo-treewidth-analysis**, we provide a setup script. Simply execute from within alib's root directory: 
+To install **topologyzoo-treewidth-analysis**, we provide a setup script. Simply execute from within the root directory: 
 
 ```
 pip install .
@@ -39,15 +41,14 @@ We generally propose to install **topologyzoo-treewidth-analysis** into a virtua
 You may either use our code via our API by importing the library or via our command line interface:
 
 ```
-python -m topologyzoo_treewidth_analysis.cli
+python -m topologyzoo_treewidth_analysis.cli compute-topologyzoo-treewidths --help
+Usage: cli.py compute-topologyzoo-treewidths [OPTIONS]
 
-Usage: cli.py [OPTIONS] COMMAND [ARGS]...
+  Computes the treewidth of all contained topology zoo graphs. Stores the
+  output in the output/ folder and the log in log/.
 
 Options:
   --help  Show this message and exit.
-
-Commands:
-  compute-topologyzoo-treewidths
 ```
 
 # Contact
